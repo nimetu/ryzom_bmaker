@@ -1,5 +1,5 @@
 {
-    "name": "nimetu/bmaker",
+    "name": "nimetu/ryzom_bmaker",
     "type": "library",
     "description": "Character signature template renderer",
     "keywords": ["ryzom"],
