@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<ryzomapi>
+    <guild apikey="1234567890abcdef" cached_until="1306645475">
+        <gid>105907534</gid>
+        <name>Api Home In Atys</name>
+        <description>Happy Api Testing</description>
+        <icon>222933459130252913</icon>
+        <shard>aniro</shard>
+        <race>Zorai</race>
+        <cult>kami</cult>
+        <civilization>zorai</civilization>
+        <creation_date>1355288006</creation_date>
+        <building>182452283</building>
+        <money>3141592</money>
+        <motd>Hello!</motd>
+        <members>
+            <member>
+                <name>Apihomin</name>
+                <grade>Leader</grade>
+                <joined>1355288006</joined>
+            </member>
+            <member>
+                <name>Apinoob</name>
+                <grade>Member</grade>
+                <joined>1355293863</joined>
+            </member>
+        </members>
+        <fames>
+            <fyros>0</fyros>
+            <matis>0</matis>
+            <tryker>0</tryker>
+            <zorai>180000</zorai>
+            <kami>180000</kami>
+            <karavan>-300000</karavan>
+        </fames>
+        <room>
+            <item id="" slot="0">
+                <stack>100</stack>
+                <quality>100</quality>
+                <sheet>m0639chtca01.sitem</sheet>
+            </item>
+            <item id="" slot="1">
+                <stack>100</stack>
+                <quality>100</quality>
+                <sheet>m0630dxapd01.sitem</sheet>
+            </item>
+            <item id="" slot="2">
+                <stack>17</stack>
+                <quality>40</quality>
+                <sheet>m0629dxacb01.sitem</sheet>
+            </item>
+        </room>
+    </guild>
+</ryzomapi>

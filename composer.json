@@ -1,0 +1,24 @@
+{
+    "name": "nimetu/bmaker",
+    "type": "library",
+    "description": "Character signature template renderer",
+    "keywords": ["ryzom"],
+    "homepage": "http://bm.bmsite.net",
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Meelis Mägi",
+            "email": "nimetu@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "nimetu/ryzom_extra": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "Bmaker": "lib"
+        }
+    }
+}

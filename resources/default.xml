@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root w="500" h="70" image="banner_bg.png">
+    <!-- if node name is 'image', then generate image -->
+    <image id="guild_logo" x="3" y="3" w="64" h="64" parent="root" posref="TL TL"/>
+    <image id="cult_logo" parent="" x="-2" posref="MR MR"/>
+    <image id="civ_logo" parent="cult_logo" x="0" posref="ML MR"/>
+
+    <!-- 'text' nodes, show xml element value -->
+    <text id="name" x="120" y="3" h="14" parent="" posref="TL TL"/>
+    <text id="titleid" parent="name" h="14" posref="BL TL"/>
+    <text id="guild" parent="titleid" h="14" posref="BL TL"/>
+    <text id="shard" x="120" y="-13" h="14" parent="" posref="BL BL"/>
+
+    <!-- uiXXX will be translated unless node has its own value -->
+    <text id="uiName" x="2" w="50" parent="name" posref="BL BR" size="10.0" color="rgb(255,200,100,255)"/>
+    <text id="uiGuild" x="2" w="50" parent="guild" posref="BL BR" size="10.0" color="rgb(255,200,100,255)"/>
+    <text id="uiShard" x="2" w="50" parent="shard" posref="BL BR" size="10.0" color="rgb(255,200,100,255)"/>
+
+    <!-- this will be converted to DD days, HH:MM:SS, 'days' will be translated if possible -->
+    <node id="played_time" y="-2" x="-2" parent="" posref="BR BR" size="7.5"/>
+    <node id="uiPlayed" x="-2" parent="played_time" posref="BL BR" size="7.5" color="rgb(255,200,100,255)"/>
+
+    <!-- if possible, then automatic locale based date format is used -->
+    <node id="uiLastSeen" x="70" y="-2" parent="" posref="BL BL" size="7.5" color="rgb(255,200,100,255)"/>
+    <node id="last_seen_status" x="0" y="0" parent="uiLastSeen" posref="BR BL" size="7.5"/>
+</root>

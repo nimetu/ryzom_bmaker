@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root w="500" h="70" image="banner_bg.png">
+    <!-- 3-6 = dawn, 6-20 =day, 20-22=twilight, 22-3=night -->
+    <var id="is_day">false</var>
+    <var id="txt_color">rgb(127,127,127)</var>
+    <var id="time_of_day">night</var>
+    <when test="$atys:time &gt;= '3'">
+        <when test="$atys:time &lt; '22'">
+            <var id="is_day">true</var>
+            <var id="txt_color">rgb(120,120,50)</var>
+            <var id="time_of_day">twilight</var>
+            <when test="$atys:time &lt; '20'">
+                <var id="time_of_day">day</var>
+                <var id="txt_color">rgb(255,255,255)</var>
+            </when>
+            <when test="$atys:time &lt; '6'">
+                <var id="time_of_day">dawn</var>
+                <var id="txt_color">rgb(50,120,120)</var>
+            </when>
+        </when>
+        <!-- otherwise night -->
+    </when>
+    <!-- otherwise night -->
+
+    <when test="$is_day = 'true'">
+        <text id="txt0" x="0" y="-1" parent="" posref="TL TL" color="$txt_color" font="ryzom.ttf" size="6">DAY
+            ($time_of_day) : $atys:datetime
+        </text>
+    </when>
+    <otherwise>
+        <text id="txt0" x="0" y="-1" parent="" posref="TL TL" color="$txt_color" font="ryzom.ttf" size="6">NIGHT :
+            $atys:datetime
+        </text>
+    </otherwise>
+</root>
