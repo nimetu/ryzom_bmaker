@@ -37,13 +37,20 @@ class CharacterApiHelper implements KeywordsCollection
     protected $translate;
 
     /**
-     * @param \SimpleXMLElement $xml
      * @param TranslatorInterface $translate
      */
-    public function __construct(\SimpleXMLElement $xml, TranslatorInterface $translate)
+    public function __construct(TranslatorInterface $translate)
+    {
+        $this->xml = null;
+        $this->translate = $translate;
+    }
+
+    /**
+     * @param \SimpleXMLElement $xml
+     */
+    public function setCharacter(\SimpleXMLElement $xml)
     {
         $this->xml = $xml;
-        $this->translate = $translate;
     }
 
     /**
@@ -54,6 +61,10 @@ class CharacterApiHelper implements KeywordsCollection
      */
     public function get($id, array $params = array())
     {
+        if (!$this->xml) {
+            return null;
+        }
+
         $translate = isset($params['translate']) ? $params['translate'] : true;
 
         switch ($id) {

@@ -33,9 +33,10 @@ class FactionLogoHelper
     /**
      * @param string $dataPath
      */
-    public function __construct($dataPath)
+    public function __construct($dataPath = false)
     {
-        $this->dataPath = $dataPath;
+
+        $this->dataPath = $dataPath ? : __DIR__.'/../../../resources/faction';
     }
 
     /**

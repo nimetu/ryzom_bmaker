@@ -33,7 +33,8 @@ class CharacterApiHelperTest extends \PHPUnit_Framework_TestCase
             ->with($this->equalTo('title0001.title'))
             ->will($this->returnValue('Title #1'));
 
-        $ca = new CharacterApiHelper($xml, $trans);
+        $ca = new CharacterApiHelper($trans);
+        $ca->setCharacter($xml);
         $this->assertEquals('CaseSensitive', $ca->get('name'));
         $this->assertEquals('Shard', $ca->get('shard'));
         $this->assertEquals('Guild Name', $ca->get('guild'));
@@ -60,7 +61,8 @@ class CharacterApiHelperTest extends \PHPUnit_Framework_TestCase
 
         $trans = $this->getMock('Bmaker\Translator\TranslatorInterface');
 
-        $ca = new CharacterApiHelper($xml, $trans);
+        $ca = new CharacterApiHelper($trans);
+        $ca->setCharacter($xml);
         $this->assertEquals('Name', $ca->get('name'));
         $this->assertEquals('', $ca->get('guild'));
         $this->assertEquals('', $ca->get('guild_logo'));
@@ -84,7 +86,8 @@ class CharacterApiHelperTest extends \PHPUnit_Framework_TestCase
             ->with($this->equalTo('uiOnline'))
             ->will($this->returnValue('Online'));
 
-        $ca = new CharacterApiHelper($xml, $trans);
+        $ca = new CharacterApiHelper($trans);
+        $ca->setCharacter($xml);
         $this->assertEquals('Online', $ca->get('status'));
         $this->assertEquals('Online', $ca->get('last_seen'));
         $this->assertEquals('Thu, 01 Jan 1970 00:00:11', $ca->get('last_seen_status'));
@@ -106,7 +109,8 @@ class CharacterApiHelperTest extends \PHPUnit_Framework_TestCase
             ->with($this->equalTo('uiOffline'))
             ->will($this->returnValue('Offline'));
 
-        $ca = new CharacterApiHelper($xml, $trans);
+        $ca = new CharacterApiHelper($trans);
+        $ca->setCharacter($xml);
         $this->assertEquals('Offline', $ca->get('status'));
         $this->assertEquals('Thu, 01 Jan 1970 00:00:11', $ca->get('last_seen'));
     }
@@ -127,7 +131,8 @@ class CharacterApiHelperTest extends \PHPUnit_Framework_TestCase
             ->with($this->equalTo('uiDayPlayed'))
             ->will($this->returnValue('1 day'));
 
-        $ca = new CharacterApiHelper($xml, $trans);
+        $ca = new CharacterApiHelper($trans);
+        $ca->setCharacter($xml);
         $this->assertEquals('1 day 23:59:59', $ca->get('played_time'));
     }
 
@@ -147,7 +152,8 @@ class CharacterApiHelperTest extends \PHPUnit_Framework_TestCase
             ->with($this->equalTo('uiDaysPlayed'))
             ->will($this->returnValue('2 days'));
 
-        $ca = new CharacterApiHelper($xml, $trans);
+        $ca = new CharacterApiHelper($trans);
+        $ca->setCharacter($xml);
         $this->assertEquals('2 days 23:59:59', $ca->get('played_time'));
     }
 }

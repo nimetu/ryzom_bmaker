@@ -107,11 +107,26 @@ class Template implements FinderInterface
 
         $this->guildIconHelper = false;
 
-        if ($trans->getLang() == 'ru') {
-            $this->defaultFont = 'ryzom.ttf';
-        } else {
-            $this->defaultFont = 'basic.ttf';
-        }
+        $this->defaultFont = 'ryzom.ttf';
+
+        $this->registerFonts(
+            array(
+                'ryzom.ttf' => __DIR__.'/../../resources/fonts/ryzom.ttf',
+                'basic.ttf' => __DIR__.'/../../resources/fonts/basic.ttf',
+            ),
+            true
+        );
+
+        $this->registerImages(
+            array(
+                'banner_bg.png' => __DIR__.'/../../resources/background/banner_bg.png',
+                'banner_bg_fyros.png' => __DIR__.'/../../resources/background/banner_bg_fyros.png',
+                'banner_bg_tryker.png' => __DIR__.'/../../resources/background/banner_bg_tryker.png',
+                'banner_bg_matis.png' => __DIR__.'/../../resources/background/banner_bg_matis.png',
+                'banner_bg_zorai.png' => __DIR__.'/../../resources/background/banner_bg_zorai.png',
+            ),
+            true
+        );
     }
 
     /**
@@ -574,10 +589,15 @@ class Template implements FinderInterface
      * Register font paths
      *
      * @param array $fonts
+     * @param bool $replace default false
      */
-    function registerFonts(array $fonts)
+    function registerFonts(array $fonts, $replace = false)
     {
-        $this->fonts = $fonts;
+        if ($replace) {
+            $this->fonts = $fonts;
+        } else {
+            $this->fonts = array_merge($this->fonts, $fonts);
+        }
     }
 
     /**
@@ -600,10 +620,15 @@ class Template implements FinderInterface
      * Register image paths
      *
      * @param array $images
+     * @param bool $clean default false
      */
-    function registerImages(array $images)
+    function registerImages(array $images, $replace = false)
     {
-        $this->images = $images;
+        if ($replace) {
+            $this->images = $images;
+        } else {
+            $this->images = array_merge($this->images, $images);
+        }
     }
 
     /**

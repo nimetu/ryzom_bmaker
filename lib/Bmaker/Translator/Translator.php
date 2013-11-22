@@ -43,6 +43,11 @@ class Translator implements TranslatorInterface
     {
         $this->defaultLanguage = $defaultLanguage;
         $this->messages = array();
+
+        // load default translations
+        $this->register(include __DIR__.'/../../../resources/lang_en.php', 'en');
+        $this->register(include __DIR__.'/../../../resources/lang_fr.php', 'fr');
+        $this->register(include __DIR__.'/../../../resources/lang_de.php', 'de');
     }
 
     /**
