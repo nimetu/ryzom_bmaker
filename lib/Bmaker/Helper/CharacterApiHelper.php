@@ -105,8 +105,8 @@ class CharacterApiHelper implements KeywordsCollection
                 }
                 $result = $this->translate->trans($key);
                 break;
-            case 'last_seen':
-                $login = intval($this->xml->played['lastlogin']);
+            case 'last_seen_status':
+            $login = intval($this->xml->played['lastlogin']);
                 $logout = intval($this->xml->played['lastlogout']);
                 if ($login > $logout) {
                     $result = $this->translate->trans('uiOnline');
@@ -114,8 +114,8 @@ class CharacterApiHelper implements KeywordsCollection
                     $result = gmstrftime('%a, %d %b %Y %H:%M:%S', $logout);
                 }
                 break;
-            case 'last_seen_status':
-                $timestamp = max(intval($this->xml->played['lastlogin']), intval($this->xml->played['lastlogout']));
+            case 'last_seen':
+            $timestamp = max(intval($this->xml->played['lastlogin']), intval($this->xml->played['lastlogout']));
                 $result = gmstrftime('%a, %d %b %Y %H:%M:%S', $timestamp);
                 break;
             case 'played_time':

@@ -89,8 +89,8 @@ class CharacterApiHelperTest extends \PHPUnit_Framework_TestCase
         $ca = new CharacterApiHelper($trans);
         $ca->setCharacter($xml);
         $this->assertEquals('Online', $ca->get('status'));
-        $this->assertEquals('Online', $ca->get('last_seen'));
-        $this->assertEquals('Thu, 01 Jan 1970 00:00:11', $ca->get('last_seen_status'));
+        $this->assertEquals('Online', $ca->get('last_seen_status'));
+        $this->assertEquals('Thu, 01 Jan 1970 00:00:11', $ca->get('last_seen'));
     }
 
 
@@ -112,6 +112,7 @@ class CharacterApiHelperTest extends \PHPUnit_Framework_TestCase
         $ca = new CharacterApiHelper($trans);
         $ca->setCharacter($xml);
         $this->assertEquals('Offline', $ca->get('status'));
+        $this->assertEquals('Thu, 01 Jan 1970 00:00:11', $ca->get('last_seen_status'));
         $this->assertEquals('Thu, 01 Jan 1970 00:00:11', $ca->get('last_seen'));
     }
 
