@@ -620,7 +620,7 @@ class Template implements FinderInterface
      * Register image paths
      *
      * @param array $images
-     * @param bool $clean default false
+     * @param bool $replace
      */
     function registerImages(array $images, $replace = false)
     {
@@ -628,6 +628,36 @@ class Template implements FinderInterface
             $this->images = $images;
         } else {
             $this->images = array_merge($this->images, $images);
+        }
+    }
+
+    /**
+     * Register directory to be used for images and fonts
+     *
+     * .png, .jpg, .ttf files are scanned and registered
+     *
+     * @param string $path
+     */
+    function registerDirectory($path)
+    {
+        $files = glob($path.'/*.{jpg,png,ttf}', GLOB_BRACE);
+        $images = array();
+        $fonts = array();
+        foreach ($files as $file) {
+            $name = strtolower(basename($file));
+            $ext = substr($name, -4);
+            if ($ext == '.ttf') {
+                $fonts[$name] = $file;
+            } else {
+                $images[$name] = $file;
+            }
+        }
+
+        if (!empty($images)) {
+            $this->registerImages($images);
+        }
+        if (!empty($fonts)) {
+            $this->registerFonts($fonts);
         }
     }
 
