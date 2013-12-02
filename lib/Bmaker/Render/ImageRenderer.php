@@ -110,7 +110,7 @@ class ImageRenderer extends AbstractRenderer
         imagefill($canvas, 0, 0, $filler);
 
         $bgFile = $this->bgImage;
-        if ($bgFile !== false) {
+        if ($bgFile !== false && file_exists($bgFile)) {
             $data = file_get_contents($bgFile);
             $bg = imagecreatefromstring($data);
             if ($bg !== false) {
