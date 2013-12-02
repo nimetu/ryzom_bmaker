@@ -234,8 +234,8 @@ class Template implements FinderInterface
             $this->defaultFont = $this->fonts[$font];
         }
 
-        $race = $this->valueLookup('race_logo');
-        $cult = $this->valueLookup('cult_logo');
+        $race = strtolower($this->valueLookup('race_logo'));
+        $cult = strtolower($this->valueLookup('cult_logo'));
 
         $image = $this->getBackgroundImage($image, $race, $cult);
 
@@ -355,7 +355,7 @@ class Template implements FinderInterface
             case 'civ_logo':
                 $logo = $this->valueLookup($nodeId);
                 if ($this->factionLogoHelper) {
-                    $im = $this->factionLogoHelper->render($logo);
+                    $im = $this->factionLogoHelper->render(strtolower($logo));
                     $image->setImage($im);
                 }
                 break;
