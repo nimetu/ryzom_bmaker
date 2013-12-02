@@ -355,7 +355,7 @@ class Template implements FinderInterface
             case 'civ_logo':
             $logo = strtolower($this->valueLookup($nodeId));
             if ($this->factionLogoHelper) {
-                    $im = $this->factionLogoHelper->render(strtolower($logo));
+                $im = $this->factionLogoHelper->render(strtolower($logo));
                     $image->setImage($im);
                 }
                 break;
