@@ -86,6 +86,14 @@ class ImageRenderer extends AbstractRenderer
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
      * Prepare output image with background color and image
      *
      * @return resource

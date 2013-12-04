@@ -43,6 +43,11 @@ interface RenderInterface
     public function setType($type);
 
     /**
+     * @return string
+     */
+    public function getType();
+
+    /**
      * Set output size
      * Clamped to min/max size
      *
