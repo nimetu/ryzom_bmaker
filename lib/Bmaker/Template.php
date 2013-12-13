@@ -353,6 +353,7 @@ class Template implements FinderInterface
                 break;
             case 'cult_logo':
             case 'civ_logo':
+            case 'org_logo':
             $logo = strtolower($this->valueLookup($nodeId));
             if ($this->factionLogoHelper) {
                 $im = $this->factionLogoHelper->render(strtolower($logo));

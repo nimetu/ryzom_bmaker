@@ -4,6 +4,7 @@
     <image id="guild_logo" x="3" y="3" w="64" h="64" parent="root" posref="TL TL"/>
     <image id="cult_logo" parent="" x="-2" posref="MR MR"/>
     <image id="civ_logo" parent="cult_logo" x="0" posref="ML MR"/>
+    <image id="org_logo" parent="civ_logo" x="0" posref="ML MR"/>
 
     <!-- 'text' nodes, show xml element value -->
     <text id="name" x="120" y="3" h="14" parent="" posref="TL TL"/>
