@@ -10,7 +10,7 @@ $atysDate = new \RyzomExtra\AtysDateTime('atys');
 $atysDate->setGameCycle(0);
 
 // character xml
-$xml = simplexml_load_file(__DIR__.'/api-xml/apihomin-public.xml');
+$xml = simplexml_load_file(__DIR__.'/api-xml/apihomin-faction-test.xml');
 
 $trans = new \Bmaker\Translator\Translator('en');
 

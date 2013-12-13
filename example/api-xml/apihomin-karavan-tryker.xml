@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ryzomapi apikey="abcdef1234567890" cached_until="1348956341">
+    <character>
+        <id>1</id>
+        <name>Apihomin</name>
+        <shard>aniro</shard>
+        <race>Zorai</race>
+        <gender>m</gender>
+        <titleid>Title00023</titleid>
+        <cult>karavan</cult>
+        <civilization>tryker</civilization>
+        <played lastlogin="1248384645" lastlogout="1248384783">3104</played>
+        <body>
+            <hairtype>40</hairtype>
+            <haircolor>5</haircolor>
+            <tattoo>0</tattoo>
+            <eyescolor>4</eyescolor>
+            <gabarit height="14" torso="10" arms="14" legs="6" breast="6"/>
+            <morph target1="2" target2="5" target3="3" target4="4" target5="4" target6="3" target7="5" target8="4"/>
+        </body>
+        <guild>
+            <gid>1</gid>
+            <name>Api Home In Atys</name>
+            <icon>222933459130252913</icon>
+        </guild>
+        <equipment>
+            <feet slot="15" quality="150">ictamb_2.sitem</feet>
+            <hands slot="16" quality="150">icfamg_2.sitem</hands>
+            <chest slot="17" quality="150">icmamv_2.sitem</chest>
+            <legs slot="18" quality="1" color="6">iczalp_3.sitem</legs>
+            <handr slot="4" quality="1">teddyubo.sitem</handr>
+        </equipment>
+        <building>183500855</building>
+    </character>
+</ryzomapi>
