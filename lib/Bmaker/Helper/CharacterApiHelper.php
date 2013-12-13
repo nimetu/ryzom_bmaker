@@ -135,7 +135,7 @@ class CharacterApiHelper implements KeywordsCollection
                 $result = (string)$this->xml->cult;
                 break;
             case 'civ_logo':
-                $result = (string)$this->xml->civ;
+                $result = (string)$this->xml->civilization;
                 break;
             default:
                 $result = null;
