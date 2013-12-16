@@ -17,7 +17,7 @@ class CharacterApiHelperTest extends \PHPUnit_Framework_TestCase
 			<shard>shard</shard>
 			<race>tryker</race>
 			<cult>karavan</cult>
-			<civ>zorai</civ>
+			<civilization>zorai</civilization>
 			<titleid>title0001</titleid>
 			<guild>
 			    <name>Guild Name</name>
