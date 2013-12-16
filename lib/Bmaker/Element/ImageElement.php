@@ -50,7 +50,7 @@ class ImageElement extends AbstractElement
             $this->imWidth = imagesx($this->image);
             $this->imHeight = imagesy($this->image);
         } else {
-            $this->image = imagecreatetruecolor(0, 0);
+            $this->image = imagecreatetruecolor(1, 1);
             $t = imagecolorallocatealpha($image, 0, 0, 0, 127);
             imagefill($this->image, 0, 0, $t);
         }
