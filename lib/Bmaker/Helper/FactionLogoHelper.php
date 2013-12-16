@@ -45,21 +45,16 @@ class FactionLogoHelper
      *
      * @param string $name
      *
-     * @return resource
+     * @return resource|false
      */
     public function render($name)
     {
         $filename = sprintf('%s/%s_logo.png', $this->dataPath, $name);
-        $path = stream_resolve_include_path($filename);
-        if ($path !== false) {
-            $image = imagecreatefrompng($path);
-        } else {
-            $image = imagecreatetruecolor(1, 1);
-            $t = imagecolorallocatealpha($image, 0, 0, 0, 127);
-            imagefill($image, 0, 0, $t);
+        if (file_exists($filename)) {
+            return imagecreatefrompng($filename);
         }
 
-        return $image;
+        return false;
     }
 
 }

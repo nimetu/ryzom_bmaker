@@ -45,9 +45,15 @@ class ImageElement extends AbstractElement
      */
     function setImage($image)
     {
-        $this->image = $image;
-        $this->imWidth = imagesx($this->image);
-        $this->imHeight = imagesy($this->image);
+        if ($image) {
+            $this->image = $image;
+            $this->imWidth = imagesx($this->image);
+            $this->imHeight = imagesy($this->image);
+        } else {
+            $this->image = imagecreatetruecolor(0, 0);
+            $t = imagecolorallocatealpha($image, 0, 0, 0, 127);
+            imagefill($this->image, 0, 0, $t);
+        }
     }
 
     /**
